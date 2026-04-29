@@ -27,7 +27,7 @@ button{background:#000;color:#fff;cursor:pointer}
 <footer class="section">Made With Love ♥ See You There</footer>
 <script>
 function calculateTimeLeft(targetDate){const now=new Date();const diff=targetDate-now;if(diff<=0)return{days:0,hours:0,minutes:0,seconds:0};return{days:Math.floor(diff/(1000*60*60*24)),hours:Math.floor((diff/(1000*60*60))%24),minutes:Math.floor((diff/(1000*60))%60),seconds:Math.floor((diff/1000)%60)}}
-function renderCountdown(){const weddingDate=new Date('2026-12-20T20:00:00');const timeLeft=calculateTimeLeft(weddingDate);const c=document.getElementById('countdown');c.innerHTML='';Object.entries(timeLeft).forEach(([l,v])=>{c.innerHTML += '<div class="card">'+v+'<br>'+l+'</div>';});}
+function renderCountdown(){const weddingDate=new Date('2026-4-30T20:00:00');const timeLeft=calculateTimeLeft(weddingDate);const c=document.getElementById('countdown');c.innerHTML='';Object.entries(timeLeft).forEach(([l,v])=>{c.innerHTML += '<div class="card">'+v+'<br>'+l+'</div>';});}
 setInterval(renderCountdown,1000);renderCountdown();
 console.assert(calculateTimeLeft(new Date(Date.now()+1000)).seconds>=0,'Future date test failed');
 console.assert(calculateTimeLeft(new Date(Date.now()-1000)).seconds===0,'Past date test failed');
